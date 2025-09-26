@@ -1,10 +1,10 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <stdlib.h>
+#include<time.h>
 
 const int BAR_LENGTH = 50;
 const int MAX_TASKS = 5;
-
 typedef struct {
     int id;
     int progress;
@@ -16,12 +16,13 @@ void clear_screen();
 
 int main() {
     Task tasks[MAX_TASKS];
+    srand(time(NULL));
 
     // Initialize tasks
     for (int i = 0; i < MAX_TASKS; i++) {
         tasks[i].id = i + 1;
         tasks[i].progress = 0;
-        tasks[i].step = (i + 2);   // different speeds for realism
+        tasks[i].step = rand() % 5+1;   // different speeds for realism
     }
 
     int tasks_incomplete = 1;
