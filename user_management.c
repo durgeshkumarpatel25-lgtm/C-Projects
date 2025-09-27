@@ -66,7 +66,7 @@ void register_user() {
     int new_index = user_count;
 
     printf("\nRegister a new user");
-    printf("\nEnter username: ");
+    printf("\nEnter username: Masked Enabled: ");
     fgets(users[new_index].username, CREDENTIAL_LENGTH, stdin);
     fix_fgets_input(users[new_index].username);
 
